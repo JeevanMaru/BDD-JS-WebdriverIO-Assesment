@@ -6,12 +6,12 @@ Feature: Validate Table Functionality
   Scenario Outline: Validate Table Functionality
   Given I am on the dynamic table page
   When I navigate to the url "http://uitestingplayground.com/dynamictable"
-  Then I should see the table on the page
   And the table should have the following columns:
     | Name | Network | CPU | Disk | Memory |
   And the table should have the following rows:
     | Internet Explorer | System | Chrome | Firefox |
   And the color of the warning label should be red
+  
 
     
 

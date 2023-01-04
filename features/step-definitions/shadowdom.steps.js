@@ -1,27 +1,18 @@
 const {Given, When, Then} = require('@wdio/cucumber-framework');
+const ShadowDompage = require("../PageObject/shadowDomPage");
 
     Given(/^I navigate to the shadow DOM page$/, async function () {
-      await browser.url("http://uitestingplayground.com/shadowdom");
+      await ShadowDompage.open()
       await browser.maximizeWindow();
-
     });
   
-    When(/^I click the copy button$/, async function () {
-     await browser.pause(3000);
-      await (await browser.$('.fa.fa-cog')).click();
-      await (await browser.$('.fa.fa-clone')).click();
-      });
+    When(/^I click the copy button$/, async function () {      
+      await (await ShadowDompage.playground).click()
+      await (await ShadowDompage.shadowdom).click()
+   });
   
-    Then(/^the text is not copied to the clipboard$/, async function () {          
-          browser.waitUntil(() => {
-
-            return browser.executeScript(() => {
-              return navigator.clipboard.readText();
-            }).then((text) => {
-              return text !== 'Text to copy';
-    });
-  }, 30 * 1000);
-
+    Then(/^the text is not copied to the clipboard$/, async function () {      
+      await ShadowDompage.clipBoard()
  });
   
  

@@ -6,7 +6,7 @@ Feature: Validate Image Gallery Functionality
   Scenario Outline: Validate Image Gallery Functionality
 
     Given I am on the CNN travel page
-    When I navigate to the url "https://www.cnn.com/travel/gallery/top-christmas-markets/index.html"
+    When I navigate to the url "https://www.cnn.com/travel/article/top-christmas-markets/index.html"
     Then I should see the image gallery on the page
     And I should be able to navigate through the images in the gallery by clicking on the next and previous buttons
     

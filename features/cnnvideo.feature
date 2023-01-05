@@ -5,8 +5,8 @@ Feature: CNN VIDEO
 
   Scenario Outline: Search for a query and verify that the videos are displayed
 
-    Given I navigate to the CNN website
-    When I search for "videos"
+    Given I navigate to a CNN video page
+    When I search for the video
     Then the videos are displayed
     
 

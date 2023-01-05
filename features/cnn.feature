@@ -6,7 +6,7 @@ Feature: CNN Search- functionality
   Scenario Outline: Search for a query and verify that the search results are displayed
 
     Given I navigate to the CNN website
-    When I search for "WebdriverIO"
+    When I click on search button
     Then the search results are displayed
     
 

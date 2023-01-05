@@ -13,8 +13,7 @@ const Ajaxpage = require('../PageObject/AjaxPage');
       });
   
     Then(/^the message is not displayed more than once$/, async function () {          
-
-        await Ajaxpage.verifyAjax(Ajaxpage.ajaxdata);
+      await Ajaxpage.verifyAjax(Ajaxpage.ajaxdata);
  });
   
  

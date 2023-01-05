@@ -1,22 +1,19 @@
 const {Given, When, Then} = require('@wdio/cucumber-framework');
+const CNNSearchPage = require('../PageObject/CNNSearchPage');
 
     Given(/^I navigate to the CNN website$/, async function () {
-      await browser.url("https://www.cnn.com/");
+      await CNNSearchPage.open()
       await browser.maximizeWindow();
 
     });
   
-    When(/^I search for "([^"]*)"$/, async function (query) {
-     browser.setValue('#searchInput', query).submitForm('#searchForm');
+    When(/^I click on search button$/, async function () {
+     await (await CNNSearchPage.searchbutton).click()
       });
   
     Then(/^the search results are displayed$/, async function () {          
-          browser.waitUntil(() => {
-            return browser.isExisting('#searchResults').then((exists) => {
-              return exists === true;                
-    });
-  }, 30 * 1000);
 
+      await CNNSearchPage.verifySearchbar(CNNSearchPage.searchbar)
  });
   
  
